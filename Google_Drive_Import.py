@@ -18,7 +18,6 @@ def Create_Service(client_secret_file, api_name, api_version, *scopes):
     cred = None
 
     pickle_file = f'token_{API_SERVICE_NAME}_{API_VERSION}.pickle'
-    # print(pickle_file)
 
     if os.path.exists(pickle_file):
         with open(pickle_file, 'rb') as token:
@@ -79,9 +78,10 @@ def export_csv_file(file_path: str, parents: list=None):
     except Exception as e:
         print(e)
         return
-    
+
+#Select file    
 csv_files = os.listdir('C:/Users/User/Desktop/Moje dokumenty/test')
 
+#Select google drive folder
 for csv_file in csv_files:
-    export_csv_file(os.path.join('C:/Users/User/Desktop/Moje dokumenty/test', csv_file))
     export_csv_file(os.path.join('C:/Users/User/Desktop/Moje dokumenty/test', csv_file), parents=['19iWVK54e8TuSnHEOfwvVt9l8UEpWDPNU'])
